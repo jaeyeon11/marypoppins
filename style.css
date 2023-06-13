@@ -1,0 +1,292 @@
+@font-face {
+    font-family: 'Humanbumsuk';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+	background-color: #00DCFF;
+	margin: auto;
+	padding: 0;
+	overflow-x: hidden;
+	cursor : url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'  width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>☂️</text></svg>") 16 0, auto;
+}
+
+* {
+	letter-spacing: 0.4rem;
+}
+
+    #umbrella {
+    position: relative;
+    display: flex;
+    	margin-top: 10rem;
+    	margin-left: 3rem;
+      width: 400px;
+      height: 400px;
+      transition: transform 0.1s;
+      transition: transform 0.1s, top 0.1s;
+    }
+
+        #umbrella2 {
+    position: absolute;
+    display: flex;
+    	top: 20%;
+    	right: 0;
+      width: 500px;
+      height: 500px;
+      transition: transform 0.1s;
+      transition: transform 0.1s, top 0.1s;
+    }
+
+@keyframes rightToLeft {
+  0% {
+    transform: translateX(50px);
+    color: white;
+  }
+  10% {
+  	    color: darkblue;
+  }
+  20% {
+  	color: white;
+  }
+   30% {
+  	    color: darkblue;
+  }
+  40% {
+  	color: white;
+  }
+  50% {
+  	    color: darkblue;
+  }
+  60% {
+  	color: white;
+  }
+   70% {
+  	    color: darkblue;
+  }
+  80% {
+  	color: white;
+  }
+  100% {
+    transform: translateX(250px);
+    color: darkblue;
+  }
+}
+
+.super {
+	display: flex;
+	font-size: 10rem;
+	font-family: 'Chewy', cursive;
+	animation-name: rightToLeft;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	white-space: nowrap;
+	position: absolute;
+	top: 0%;
+	left: 10%;
+	z-index: 2;
+}
+
+
+.cali {
+	display: flex;
+	font-size: 10rem;
+	font-family: 'Chewy', cursive;
+	animation-name: rightToLeft;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	white-space: nowrap;
+	position: absolute;
+	top: 0%;
+	left: 60%;
+	z-index: 2;
+}
+
+.f {
+	display: flex;
+	font-size: 10rem;
+	font-family: 'Chewy', cursive;
+	animation-name: rightToLeft;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	white-space: nowrap;
+	position: absolute;
+	top: 20%;
+	left: 20%;
+	z-index: 2;
+}
+
+.ex {
+	display: flex;
+	font-size: 10rem;
+	font-family: 'Chewy', cursive;
+	animation-name: rightToLeft;
+	animation-duration: 10s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	white-space: nowrap;
+	position: absolute;
+	top: 40%;
+	left: 10%;
+	z-index: 2;
+}
+
+.make {
+	text-align: center;
+	margin-top: 20rem;
+	font-size: 5rem;
+	font-family: 'Chewy', cursive;
+}
+
+.video {
+	margin-top: 35rem;
+	text-align: center;
+}
+
+.pp {
+  position: absolute;
+
+  font-family: 'Humanbumsuk';
+  right: 2%;
+  top: 10%;
+  width: 170px;
+  word-break: keep-all;
+  background-color: darkgreen;
+  color: white;
+  padding: 15px;
+  border-radius: 20%;
+}
+
+.info {
+	display: none;
+}
+
+.help:hover+.info {
+  display: flex;
+}
+
+
+button {
+	margin: auto;
+	display: flex;
+	align-content: center;
+	padding-left: 7%;
+	padding-right: 7%;
+	padding-top: 4%;
+	padding-bottom: 4%;
+	border: none;
+	border-radius: 80%;
+	background-color: lightcyan;
+	filter: drop-shadow(1px 1px 20px magenta);
+
+}
+
+button:hover {
+	color: magenta;
+	filter: drop-shadow(1px 1px 20px greenyellow);
+}
+
+button:active {
+	color: black;
+	background-color: yellow;
+	filter: drop-shadow(1px 1px 20px limegreen);
+}
+
+button p {
+	font-size: 30px;
+	font-family: 'Chewy', cursive;
+}
+
+a {
+	text-decoration: none;
+}
+
+.help {
+	position: relative;
+	left: 75%;
+}
+
+.header {
+	position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 7%;
+    background-color: #00C62D;
+    z-index: 999;
+ }
+
+ .footer {
+	bottom: 0;
+    left: 0;
+ }
+
+ .footer ul {
+      list-style: none;
+      display: flex;
+      margin-left: auto;
+}
+
+.footer li {
+	margin-top: 5%;
+    margin-right: 3rem;
+    margin-bottom: 1%;
+    font-family: 'Chewy', cursive;
+}
+
+.footer a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    background-color: #C6008D;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 45%;
+}
+
+.header ul {
+      list-style: none;
+      display: flex;
+      margin-left: auto;
+}
+
+.header li {
+	margin-top: 0.5%;
+    margin-right: 1.3rem;
+    font-family: 'Chewy', cursive;
+}
+
+.header a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3rem;
+    background-color: yellow;
+    padding: 10px;
+    border-radius: 45%;
+}
+
+.header a:hover {
+    color: red;
+}
+
+.header a:active {
+    color: yellow;
+    background-color: gray;
+ }
+
+.footer a:hover {
+    color: yellow;
+}
+
+
+
+ .footer a:active {
+    color: #C6008D;
+    background-color: white;
+ }

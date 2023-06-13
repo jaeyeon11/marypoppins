@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+  <title>🪄_</title>
+  <link rel="stylesheet" href="code.css">
+</head>
+<body>
+
+    <div class="header">
+    <!-- Header content -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="code.html">Wish</a></li>
+        <li><a href="index.html#gif">Video</a></li>
+        <li><div class="help"><a>?</a></div>
+  <div class="intro">
+    <span>나를 괴롭히는 문제들을 입력하여 메리 포핀스에 도움으로 걱정들을 없애버릴 수 있는 마법의 주문을 만들어보세요 ! 가끔 입력이 안될 때가 있습니다. 한 번 더 입력 해주세요.</span>
+  </div></li>
+      </ul>
+    </nav>
+  </div>
+
+<br><br><br><br>
+
+  <form>
+    <label for="inputText"><div class="a">나를 방해하는 문제들</div></label>
+    <input type="text" id="inputText" onkeydown="handleKeyDown(event)">
+    <button type="button" onclick="displayText()" class="b">Enter</button>
+  </form>
+
+  <div id="output"></div>
+  <div id="inputted-text"></div>
+  <canvas id="canvas"></canvas>
+
+  <div class="shuffle">
+    <button type="button" onclick="shuffleText()" class="c">Create your own magic word</button>
+  </div>
+
+  <script>
+    let textArray = [];
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    const positions = [];
+
+    function handleKeyDown(event) {
+      if (event.key === 'Enter') {
+        displayText();
+        event.preventDefault();
+      }
+    }
+
+    function displayText() {
+      const input = document.getElementById('inputText');
+      const inputtedText = input.value;
+      if (inputtedText.trim().length > 0) {
+        textArray.push(inputtedText);
+        input.value = '';
+        positions.push({
+          x: getRandomInt(0, canvas.width),
+          y: getRandomInt(0, canvas.height)
+        });
+        drawText();
+      }
+    }
+
+    function drawText() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'white';
+      ctx.font = '20px Humanbumsuk';
+
+      textArray.forEach((text, index) => {
+        const position = positions[index];
+        ctx.fillText(text, position.x, position.y);
+      });
+    }
+
+    function shuffleText() {
+      const shuffledText = shuffleWords(textArray);
+      const url = 'final.html?shuffledText=' + encodeURIComponent(shuffledText);
+      window.open(url, '_blank');
+    }
+
+
+    function shuffleWords(array) {
+      // Copy the array to avoid modifying the original
+      const newArray = array.slice(0);
+      // Shuffle the array using the Fisher-Yates algorithm
+      for (let i = newArray.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArray[i], newArray[j]] = [newArray[j], newArray[i]];
+      }
+      // Join the shuffled array into a single string
+      const shuffledText = newArray.join('');
+      // Shuffle the characters of the string using the Fisher-Yates algorithm
+      const characters = shuffledText.split('');
+      for (let i = characters.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [characters[i], characters[j]] = [characters[j], characters[i]];
+      }
+      // Join the shuffled characters back into a string
+      const shuffledWord = characters.join('');
+      return shuffledWord;
+    }
+
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+  </script>
+</body>
+</html>

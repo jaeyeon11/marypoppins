@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chewy&display=swap" rel="stylesheet">
+	<title>⛱</title>
+</head>
+<body>
+	  <div class="header">
+    <!-- Header content -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="code.html">Wish</a></li>
+        <li><a href="#gif">Video</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="info">
+  	<p class="pp"> 나를 괴롭히는 문제들을 입력하여 메리 포핀스에 도움으로 걱정들을 없애버릴 수 있는 마법의 주문을 만들어보세요 !</p>
+  </div>
+
+    <img id="umbrella" src="umbrella.png">
+	<img id="umbrella2" src="umbrella2.png">
+
+  <script>
+    window.addEventListener('scroll', rotateAndScroll);
+
+    function rotateAndScroll() {
+      const umbrella = document.getElementById('umbrella');
+      const scrollHeight = window.pageYOffset;
+
+      // Adjust the rotation speed by dividing the scrollHeight with a value
+      const rotationSpeed = scrollHeight / 5;
+
+      // Rotate the image based on the adjusted scroll position
+      umbrella.style.transform = `rotate(${rotationSpeed}deg)`;
+
+      // Scroll the image vertically based on the scroll position
+      umbrella.style.top = `${50 + scrollHeight}px`;
+    }
+  </script>
+	<div class="super">
+		<p>SUPER</p>
+	</div>
+
+
+
+	<div class="cali">
+		<p>CALI</p>
+	</div>
+
+	<div class="f">
+		<p>FRAGILISTIC</p>
+	</div>
+
+	<div class="ex">
+		<p>EXPIALIDOCIOUS</p>
+	</div>
+
+	<div id=gif class="video">
+		<img src="help.gif">
+	</div>
+
+	<div class="make">
+		<p>Make Your Own</p>
+		<p>SUPERCALIFRAGILISTICEXPIALIDOCIOUS</p>
+	</div>
+
+	<br><br><br><br><br><br><br>
+
+	<a href="code.html"><button><p>Click HERE</p></button></a>
+
+	<div class="footer">
+    <nav>
+      <ul>
+        <li><a href="mailto:wwlddl1112@naver.com">Contact</a></li>
+        <li class="finish"><a href="https://www.instagram.com/yeomii___">Insta</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</body>
+</html>
